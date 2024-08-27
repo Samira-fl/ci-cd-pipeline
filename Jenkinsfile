@@ -83,10 +83,5 @@ Check the attached log file for more information.
                 echo 'Tool: Ansible'
             }
         }
-           stage('complete') {
-            steps {
-                echo 'Stage 8: complete..'
-            }
-        }
     }
 }
