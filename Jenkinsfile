@@ -1,4 +1,3 @@
-/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
 
@@ -26,10 +25,10 @@ pipeline {
                         to: "${EMAIL_RECIPIENT}",
                         subject: "Unit and Integration Tests - ${currentBuild.fullDisplayName}",
                         body: """Unit and Integration Tests stage completed with status: ${currentBuild.currentResult}
-                        |Details:
-                        |Test Log:
-                        |${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log
-                        """,
+
+Details:
+Check the attached log file for more information.
+""",
                         attachLog: true
                     )
                 }
@@ -54,10 +53,10 @@ pipeline {
                         to: "${EMAIL_RECIPIENT}",
                         subject: "Security Scan - ${currentBuild.fullDisplayName}",
                         body: """Security Scan stage completed with status: ${currentBuild.currentResult}
-                        |Details:
-                        |Security Scan Log:
-                        |${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log
-                        """,
+
+Details:
+Check the attached log file for more information.
+""",
                         attachLog: true
                     )
                 }
