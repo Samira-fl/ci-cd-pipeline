@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Stage 2: Unit and Integration Tests'
                 echo 'Task: Run unit tests to verify code functionality and integration tests.'
-                echo 'Tool: JUnit or TestNG'
+                echo 'Tool: JUnit'
             }
             post {
                 always {
@@ -45,7 +45,7 @@ Check the attached log file for more information.
             steps {
                 echo 'Stage 4: Security Scan'
                 echo 'Task: Scan the code for vulnerabilities and security issues.'
-                echo 'Tool: OWASP Dependency-Check'
+                echo 'Tool: CodeAI'
             }
             post {
                 always {
@@ -66,7 +66,7 @@ Check the attached log file for more information.
             steps {
                 echo 'Stage 5: Deploy to Staging'
                 echo 'Task: Deploy the application to a staging environment for further testing.'
-                echo 'Tool: AWS EC2 or similar staging server'
+                echo 'Tool: Ansible'
             }
         }
         stage('Integration Tests on Staging') {
@@ -80,7 +80,7 @@ Check the attached log file for more information.
             steps {
                 echo 'Stage 7: Deploy to Production'
                 echo 'Task: Deploy the application to the production environment for end-users.'
-                echo 'Tool: AWS EC2 or similar production server'
+                echo 'Tool: Ansible'
             }
         }
     }
